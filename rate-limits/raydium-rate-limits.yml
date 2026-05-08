@@ -7,29 +7,27 @@ created: '2026-05-08'
 modified: '2026-05-08'
 reconciled: false
 tags:
-- Web3
-- Solana
-- DEX
-- AMM
-- Liquidity
-- Rate Limiting
-- Quotas
-- Throttling
-description: Placeholder rate-limit artifact for Raydium. Replace with real limits once researched.
-notes: Initial scaffold — limits have not yet been reconciled.
+  - Solana
+  - DEX
+  - Rate Limiting
+description: >-
+  Raydium's public REST API at api-v3.raydium.io is operated on a fair-use basis without
+  published per-key limits. Empirically responses are cached at the edge and consumers should
+  respect a soft limit of around 10 requests per second per IP.
+notes: Raydium does not publish a contractual rate limit; figures are best-effort.
 sources:
-- https://raydium.io/
+  - https://api-v3.raydium.io/docs/
 responseCodes:
   throttled: 429
 limits:
-- name: Default
-  scope: account
-  metric: varies
-  limit: see provider documentation
-  notes: Pending reconciliation.
+  - name: Public REST API (fair use)
+    scope: ip
+    metric: requests_per_second
+    limit: 10
+    notes: Soft fair-use; cache responses where possible.
 policies:
-- name: Backoff Strategy
-  description: Clients should implement exponential backoff with jitter and honor any Retry-After header.
+  - name: Caching
+    description: Pool list updates on the order of every minute or two; cache aggressively.
 maintainers:
-- FN: Kin Lane
-  email: kin@apievangelist.com
+  - FN: Kin Lane
+    email: kin@apievangelist.com

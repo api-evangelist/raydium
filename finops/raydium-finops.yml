@@ -5,62 +5,66 @@ provider: Raydium
 providerId: raydium
 created: '2026-05-08'
 modified: '2026-05-08'
-reconciled: false
+reconciled: true
 tags:
-- Web3
-- Solana
-- DEX
-- AMM
-- Liquidity
-- FinOps
-- Cost Management
-- FOCUS
-description: FOCUS-aligned FinOps placeholder for Raydium. Pipeline will replace with real billing details.
-notes: Initial scaffold — billing model has not yet been reconciled.
+  - Solana
+  - DEX
+  - On-chain
+  - FinOps
+  - FOCUS
+description: >-
+  FinOps view of Raydium. There is no SaaS bill. Cost is Solana priority-fee gas (paid in SOL)
+  and per-pool swap fee (paid in trade asset). FinOps allocation is by wallet and by program
+  interaction; the public REST API is free.
 sources:
-- https://raydium.io/
-- https://focus.finops.org/focus-specification/v1-3/
+  - https://docs.raydium.io/
+  - https://focus.finops.org/focus-specification/v1-3/
 alignedWith:
   framework: FinOps Foundation Framework
   frameworkUrl: https://www.finops.org/framework/
   dataSpec: FOCUS
   dataSpecVersion: '1.3'
   dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
-publisherName: Raydium
-serviceCategory: Web3
+publisherName: Raydium DAO
+serviceCategory: DeFi Protocol
 billingModel:
-  pricingCategory: To Be Reconciled
-  billingFrequency: Monthly
-  billingCurrency: USD
+  pricingCategory: On-chain Usage Fee
+  billingFrequency: Per Transaction
+  billingCurrency: SOL
   chargeCategories:
-  - Usage
-  - Purchase
-  - Adjustment
+    - Usage
 focusColumns:
-  ServiceName: Raydium
-  ServiceCategory: Web3
-  ProviderName: Raydium
-  PublisherName: Raydium
-  InvoiceIssuerName: Raydium
-  BillingCurrency: USD
+  ServiceName: Raydium AMM/CLMM
+  ServiceCategory: DeFi Protocol
+  ProviderName: Raydium DAO
+  PublisherName: Raydium DAO
+  InvoiceIssuerName: On-chain
+  BillingCurrency: SOL
   ChargeCategory: Usage
 meters:
-- name: api_usage
-  description: Catch-all meter pending reconciliation.
-  unit: varies
-  aggregation: sum
-  dimensions:
-  - account
-  - resource
+  - name: priority_fee
+    description: Solana priority-fee gas per swap or LP operation.
+    unit: lamport
+    aggregation: sum
+    dimensions:
+      - wallet
+      - pool
+  - name: pool_swap_fee
+    description: Per-pool swap fee (typically 0.25% AMM, variable CLMM).
+    unit: percent_of_notional
+    aggregation: sum
+    dimensions:
+      - wallet
+      - pool
 principles:
-- name: Visibility
-  description: Pull provider invoices or usage exports until a self-serve usage feed is documented.
-- name: Allocation
-  description: Tag invoice line items to consuming business units in your FinOps store.
-- name: Optimization
-  description: Levers depend on the provider's billing model; review at renewal once reconciled.
-- name: Accountability
-  description: Assign a contract owner to review billing against negotiated terms.
+  - name: Visibility
+    description: Pull on-chain swap events into FinOps store; tag by wallet and pool.
+  - name: Allocation
+    description: Allocate priority fees and swap fees to consuming desk by wallet.
+  - name: Optimization
+    description: Bundle swaps into single Solana transactions; tune priority fees.
+  - name: Accountability
+    description: Assign a wallet owner per executing strategy; reconcile monthly.
 maintainers:
-- FN: Kin Lane
-  email: kin@apievangelist.com
+  - FN: Kin Lane
+    email: kin@apievangelist.com
