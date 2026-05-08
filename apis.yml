@@ -1,0 +1,29 @@
+aid: raydium
+url: https://raw.githubusercontent.com/api-evangelist/raydium/refs/heads/main/apis.yml
+name: Raydium
+x-type: company
+description: >-
+  Raydium is a leading Solana AMM and liquidity provider with concentrated liquidity (CLMM), launchpad, and integration with the Solana ecosystem.
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Web3
+  - Solana
+  - DEX
+  - AMM
+  - Liquidity
+created: '2026-05-08'
+modified: '2026-05-08'
+specificationVersion: '0.19'
+apis: []
+common:
+  - type: Website
+    url: https://raydium.io/
+  - type: Plans
+    url: plans/raydium-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/raydium-rate-limits.yml
+  - type: FinOps
+    url: finops/raydium-finops.yml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
