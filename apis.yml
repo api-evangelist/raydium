@@ -1,7 +1,7 @@
 aid: raydium
 url: https://raw.githubusercontent.com/api-evangelist/raydium/refs/heads/main/apis.yml
 name: Raydium
-x-type: protocol
+kind: protocol
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
   - Web3
