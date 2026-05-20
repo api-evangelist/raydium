@@ -75,6 +75,8 @@ apis:
       - Direct on-chain swap and LP execution
       - Bot strategies on Solana
 common:
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/raydium
   - type: Portal
     url: https://raydium.io/
   - type: Documentation
