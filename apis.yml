@@ -89,6 +89,8 @@ common:
     url: rate-limits/raydium-rate-limits.yml
   - type: FinOps
     url: finops/raydium-finops.yml
+  - type: LLMsTxt
+    url: https://docs.raydium.io/llms.txt
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
