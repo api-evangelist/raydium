@@ -1,0 +1,184 @@
+aid: raydium
+name: Raydium
+review_type: streaming-availability
+question: Does Raydium expose a documented, first-party public streaming surface (WebSocket, Server-Sent Events, or webhooks)?
+answer: No
+summary: |
+  Raydium is a Solana-native AMM, CLMM, farm, and launchpad protocol. Its
+  first-party public HTTP surface is the Raydium REST API v3 at
+  api-v3.raydium.io, used by the Raydium UI and integrators for pool list,
+  CLMM pools, farm rewards, token metadata, prices, chain time, and swap
+  quote / transaction helpers. That REST surface is documented as
+  request/response JSON over HTTPS — there is no WebSocket, no Server-Sent
+  Events, no long-poll streaming endpoint, and no outbound webhook /
+  callback registration documented. Real-time visibility into Raydium pool,
+  CLMM, and farm activity is a property of the Solana network and is
+  obtained by subscribing to Solana RPC pub/sub channels
+  (accountSubscribe, logsSubscribe, programSubscribe, signatureSubscribe,
+  slotSubscribe) over a JSON-RPC WebSocket endpoint provided by a Solana
+  RPC node operator — self-hosted, or Helius / Triton / QuickNode / Alchemy
+  / Ankr / Solana Foundation public RPCs. That WebSocket belongs to the
+  node operator, not to Raydium. The one nominally "WebSocket" surface that
+  the Raydium docs reference is for Raydium Perps, which is a white-labeled
+  deployment on Orderly Network — the documented WebSocket host is
+  wss://ws.orderly.org/, operated by Orderly Network, not by Raydium.
+investigated_on: '2026-05-30'
+investigated_by: API Evangelist
+findings:
+  - name: Raydium REST API v3 is JSON over HTTPS with no streaming endpoints
+    detail: |
+      The OpenAPI description captured in this repo
+      (openapi/raydium-openapi.yml) covers /main/version, /main/info,
+      /main/chain-time, pool list / pool by id / pool key / pool line,
+      CLMM pool and CLMM position endpoints, farm info, mint / token
+      metadata, mint price, compute swap-base-in / swap-base-out, and
+      transaction-builder helpers. Every documented operation is a GET (or
+      a transactional helper) over HTTPS returning application/json. There
+      are no operations with text/event-stream responses, no upgrade-to-
+      WebSocket endpoints, and no `callbacks` objects for outbound
+      webhooks. The api-v3.raydium.io/docs/ Swagger UI describes the same
+      REST surface.
+    sources:
+      - openapi/raydium-openapi.yml
+      - https://api-v3.raydium.io/docs/
+  - name: Real-time pool / swap visibility is a Solana RPC property, not a Raydium API
+    detail: |
+      Raydium is on-chain. Real-time events (swap, deposit, withdraw, CLMM
+      position changes, farm reward updates) are emitted by the Raydium
+      AMM, CLMM, farm, staking, and LaunchLab Solana programs as logs and
+      account state mutations. Integrators consume them by subscribing to
+      Solana RPC pub/sub methods (accountSubscribe, logsSubscribe with a
+      program-id filter, programSubscribe, signatureSubscribe, and
+      slotSubscribe) over a Solana JSON-RPC WebSocket endpoint. That
+      WebSocket endpoint is provided by the Solana RPC node the developer
+      chooses (self-hosted solana-validator, Helius, Triton, QuickNode,
+      Alchemy, Ankr, Solana Foundation public RPC, etc.) — not by Raydium.
+      Raydium does not operate a public Solana RPC node WebSocket for
+      third-party developers.
+    sources:
+      - https://docs.raydium.io/
+      - https://docs.raydium.io/llms.txt
+  - name: No documented outbound webhooks
+    detail: |
+      The Raydium developer documentation (docs.raydium.io), the v3 REST
+      Swagger UI (api-v3.raydium.io/docs/), and the captured OpenAPI in
+      this repo do not document any webhook subscription mechanism. There
+      is no endpoint for registering a callback URL to receive pool, farm,
+      swap, or launchpad lifecycle events, and the OpenAPI file contains
+      no `callbacks` objects. Lifecycle visibility for on-chain activity
+      is achieved through Solana RPC pub/sub or by polling the v3 REST
+      endpoints.
+    sources:
+      - openapi/raydium-openapi.yml
+      - https://docs.raydium.io/
+  - name: Raydium Perps WebSocket is Orderly Network, not Raydium
+    detail: |
+      The Raydium docs index references "subscribe to a market WebSocket"
+      in the Perps Code Demos section. Raydium Perps is a white-labeled
+      deployment on Orderly Network's perpetual futures infrastructure.
+      The documented WebSocket URL pattern in the Perps code demos is
+      `wss://ws.orderly.org/ws/stream/${accountId}` — host
+      `ws.orderly.org`, operated by Orderly Network. It is not a
+      Raydium-hosted endpoint and does not surface AMM, CLMM, farm, or
+      LaunchLab activity. Representing this as a Raydium first-party
+      WebSocket would misattribute the operator.
+    sources:
+      - https://docs.raydium.io/products/perps/code-demos.md
+      - https://docs.raydium.io/llms.txt
+  - name: GitHub SDKs do not introduce a Raydium-operated streaming endpoint
+    detail: |
+      raydium-io/raydium-sdk-V2 and the AMM / CLMM / launchpad program
+      repositories under github.com/raydium-io contain the on-chain
+      program source and TypeScript SDK helpers that wrap REST and
+      on-chain calls. They do not introduce a Raydium-operated WebSocket,
+      SSE, or webhook endpoint — they consume the v3 REST API and the
+      Solana RPC interface provided by the integrator's chosen node.
+    sources:
+      - https://github.com/raydium-io
+      - https://github.com/raydium-io/raydium-amm
+documented_apis:
+  - name: Raydium REST API v3
+    protocol: REST/HTTPS
+    websocket: false
+    sse: false
+    webhooks: false
+    notes: |
+      Pool, CLMM, farm, token, price, chain-time, swap quote, and
+      transaction-builder endpoints. JSON only. Polling only.
+  - name: Raydium Solana Programs (AMM, CLMM, Farm, Staking, LaunchLab)
+    protocol: Solana on-chain (Anchor IDL / CPI)
+    websocket: indirect
+    sse: false
+    webhooks: false
+    notes: |
+      Real-time visibility comes from Solana RPC pub/sub
+      (accountSubscribe, logsSubscribe, programSubscribe,
+      signatureSubscribe, slotSubscribe) over the node operator's JSON-RPC
+      WebSocket. That endpoint is provided by the RPC operator (Helius,
+      Triton, QuickNode, Alchemy, Ankr, self-hosted, etc.), not by
+      Raydium.
+  - name: Raydium Perps (white-labeled on Orderly Network)
+    protocol: REST/HTTPS + WebSocket (Orderly-operated)
+    websocket: third-party
+    sse: false
+    webhooks: false
+    notes: |
+      WebSocket host is wss://ws.orderly.org/, operated by Orderly
+      Network. Not a Raydium-hosted streaming surface; covers perps order
+      book / trade / private account updates only — not AMM, CLMM, farm,
+      or LaunchLab.
+streaming_surface:
+  websocket: []
+  sse: []
+  webhooks: []
+  notes: |
+    Raydium operates no first-party WebSocket, SSE, or webhook endpoint.
+    Real-time data is obtained through (a) Solana RPC pub/sub over a node
+    operator's JSON-RPC WebSocket, or (b) for Perps, Orderly Network's
+    WebSocket at wss://ws.orderly.org/. Neither is Raydium-operated.
+recommendations_for_realtime:
+  - For real-time Raydium AMM, CLMM, farm, staking, and LaunchLab activity,
+    use a Solana RPC node provider (Helius, Triton, QuickNode, Alchemy,
+    Ankr, or self-hosted) and subscribe via the standard Solana JSON-RPC
+    WebSocket methods — accountSubscribe for pool state, logsSubscribe
+    filtered by the relevant Raydium program ID, programSubscribe for
+    program-owned accounts, and signatureSubscribe for transaction
+    confirmation.
+  - For Perps market and private-account streams, connect to Orderly
+    Network's WebSocket (wss://ws.orderly.org/). Attribute that endpoint
+    to Orderly, not to Raydium.
+  - For pool list, token metadata, and swap quote data without real-time
+    requirements, poll the Raydium REST API v3 at api-v3.raydium.io on a
+    cadence compatible with documented fair-use rate limits.
+  - Do not represent Raydium as exposing a first-party WebSocket, SSE, or
+    webhook surface. None is documented at docs.raydium.io or
+    api-v3.raydium.io/docs/.
+asyncapi_recommendation:
+  produce: false
+  reason: |
+    There is no first-party Raydium-hosted WebSocket, SSE, or webhook
+    channel to describe. The relevant push channels are operated by
+    third parties — Solana RPC node operators (generic Solana JSON-RPC
+    pub/sub, not Raydium-specific) and Orderly Network (Perps). Producing
+    an AsyncAPI document under the Raydium AID would require fabricating
+    Raydium-operated channels, servers, and messages that the Raydium
+    developer surface does not publish, and would misattribute Solana RPC
+    pub/sub and Orderly Network streams to Raydium. A Solana RPC pub/sub
+    AsyncAPI, if useful, belongs under a Solana / RPC-provider AID — not
+    under raydium.
+sources_checked:
+  - url: https://docs.raydium.io/
+    note: Developer documentation root. Lists TypeScript SDK, REST API, Anchor IDL, Rust CPI, Python integration. WebSocket called out only for Perps (Orderly Network white-label).
+  - url: https://docs.raydium.io/llms.txt
+    note: LLM-oriented index of the developer docs. No WebSocket / SSE / webhook reference for AMM, CLMM, farm, or LaunchLab. Only Perps Code Demos references "subscribe to a market WebSocket" via Orderly.
+  - url: https://docs.raydium.io/products/perps/code-demos.md
+    note: Documents Perps WebSocket pattern wss://ws.orderly.org/ws/stream/${accountId} — Orderly-operated host, not Raydium.
+  - url: https://api-v3.raydium.io/docs/
+    note: Swagger UI for Raydium REST API v3. JSON over HTTPS. No streaming, no callbacks.
+  - url: openapi/raydium-openapi.yml
+    note: Captured OpenAPI for the v3 REST API. All operations are HTTPS request/response JSON. No text/event-stream responses, no WebSocket endpoints, no callbacks objects.
+  - url: https://github.com/raydium-io
+    note: Raydium organization on GitHub. AMM, CLMM, launchpad, and SDK V2 repos. No Raydium-operated streaming service introduced by the SDK or program code.
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
