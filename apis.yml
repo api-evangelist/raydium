@@ -4,93 +4,94 @@ name: Raydium
 kind: protocol
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-  - Web3
-  - Solana
-  - DEX
-  - AMM
-  - Liquidity
-  - CLMM
-  - Launchpad
-  - Open Source
+- Web3
+- Solana
+- DEX
+- AMM
+- Liquidity
+- CLMM
+- Launchpad
+- Open Source
 created: '2026-05-08'
 modified: '2026-05-08'
 specificationVersion: '0.19'
-description: >-
-  Raydium is a leading Solana AMM and liquidity provider supporting standard AMM, concentrated
-  liquidity (CLMM), and a launchpad. The Raydium API at api-v3.raydium.io exposes pool, farm,
-  token, swap quote, and price endpoints used by the Raydium UI and integrators. Smart-contract
-  entry points are the primary write path.
+description: Raydium is a leading Solana AMM and liquidity provider supporting standard
+  AMM, concentrated liquidity (CLMM), and a launchpad. The Raydium API at api-v3.raydium.io
+  exposes pool, farm, token, swap quote, and price endpoints used by the Raydium UI
+  and integrators. Smart-contract entry points are the primary write path.
 apis:
-  - aid: raydium:rest-api
-    name: Raydium REST API v3
-    tags:
-      - Pools
-      - Farms
-      - Tokens
-      - Swap Quote
-      - Solana
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
-    baseURL: https://api-v3.raydium.io
-    humanURL: https://api-v3.raydium.io/docs/
-    description: >-
-      REST API for Raydium pool list, CLMM pools, farm rewards, token metadata, swap quote, and
-      price endpoints. Used by raydium.io UI and third-party integrators. JSON output. Free,
-      unauthenticated, fair-use.
-    properties:
-      - type: Documentation
-        url: https://api-v3.raydium.io/docs/
-      - type: GitHub
-        url: https://github.com/raydium-io
-    x-features:
-      - AMM and CLMM pool data
-      - Farm reward data
-      - Swap quote endpoint
-      - Token metadata
-    x-use-cases:
-      - Raydium analytics dashboards
-      - Custom Solana DEX UIs
-      - Pool APR aggregation
-  - aid: raydium:smart-contracts
-    name: Raydium Solana Programs
-    tags:
-      - Smart Contracts
-      - Solana
-      - On-chain
-      - CLMM
-      - AMM
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
-    baseURL: https://solscan.io/account/raydium
-    humanURL: https://docs.raydium.io/
-    description: Raydium's swap, AMM, CLMM, farm, and launchpad programs deployed on Solana.
-    properties:
-      - type: Documentation
-        url: https://docs.raydium.io/
-      - type: GitHub
-        url: https://github.com/raydium-io/raydium-amm
-    x-features:
-      - AMM and CLMM Solana programs
-      - Farm and staking programs
-      - LaunchLab launchpad
-    x-use-cases:
-      - Direct on-chain swap and LP execution
-      - Bot strategies on Solana
-common:
-  - type: LinkedIn
-    url: https://www.linkedin.com/company/raydium
-  - type: Portal
-    url: https://raydium.io/
+- aid: raydium:rest-api
+  name: Raydium REST API v3
+  tags:
+  - Pools
+  - Farms
+  - Tokens
+  - Swap Quote
+  - Solana
+  image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+  baseURL: https://api-v3.raydium.io
+  humanURL: https://api-v3.raydium.io/docs/
+  description: REST API for Raydium pool list, CLMM pools, farm rewards, token metadata,
+    swap quote, and price endpoints. Used by raydium.io UI and third-party integrators.
+    JSON output. Free, unauthenticated, fair-use.
+  properties:
+  - type: Documentation
+    url: https://api-v3.raydium.io/docs/
+  - type: GitHub
+    url: https://github.com/raydium-io
+  - url: graphql/raydium-graphql.md
+    type: GraphQL
+  x-features:
+  - AMM and CLMM pool data
+  - Farm reward data
+  - Swap quote endpoint
+  - Token metadata
+  x-use-cases:
+  - Raydium analytics dashboards
+  - Custom Solana DEX UIs
+  - Pool APR aggregation
+- aid: raydium:smart-contracts
+  name: Raydium Solana Programs
+  tags:
+  - Smart Contracts
+  - Solana
+  - On-chain
+  - CLMM
+  - AMM
+  image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+  baseURL: https://solscan.io/account/raydium
+  humanURL: https://docs.raydium.io/
+  description: Raydium's swap, AMM, CLMM, farm, and launchpad programs deployed on
+    Solana.
+  properties:
   - type: Documentation
     url: https://docs.raydium.io/
   - type: GitHub
-    url: https://github.com/raydium-io
-  - type: Plans
-    url: plans/raydium-plans-pricing.yml
-  - type: RateLimits
-    url: rate-limits/raydium-rate-limits.yml
-  - type: FinOps
-    url: finops/raydium-finops.yml
-  - type: LLMsTxt
-    url: https://docs.raydium.io/llms.txt
+    url: https://github.com/raydium-io/raydium-amm
+  x-features:
+  - AMM and CLMM Solana programs
+  - Farm and staking programs
+  - LaunchLab launchpad
+  x-use-cases:
+  - Direct on-chain swap and LP execution
+  - Bot strategies on Solana
+common:
+- type: LinkedIn
+  url: https://www.linkedin.com/company/raydium
+- type: Portal
+  url: https://raydium.io/
+- type: Documentation
+  url: https://docs.raydium.io/
+- type: GitHub
+  url: https://github.com/raydium-io
+- type: Plans
+  url: plans/raydium-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/raydium-rate-limits.yml
+- type: FinOps
+  url: finops/raydium-finops.yml
+- type: LLMsTxt
+  url: https://docs.raydium.io/llms.txt
 maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+- FN: Kin Lane
+  email: kin@apievangelist.com

@@ -1,0 +1,477 @@
+# Raydium GraphQL Schema (SDL)
+#
+# Source: Shyft Solana Indexer (programs.shyft.to) — third-party GraphQL
+#         interface over Raydium on-chain program accounts.
+#
+# Field names are derived from actual Raydium on-chain account layouts as
+# indexed and exposed by Shyft's Hasura-style GraphQL API. Raydium itself
+# does not operate a GraphQL endpoint; this SDL models the Shyft interface.
+#
+# Endpoint: https://programs.shyft.to/v0/graphql?api_key={SHYFT_API_KEY}
+#
+# Types covered:
+#   AMM v4  — LiquidityPoolv4
+#   CLMM    — PoolState, PersonalPositionState, ProtocolPositionState, TickArrayState
+#   Farms   — FarmState, FarmerState
+#   Tokens  — TokenInfo, MintInfo
+#   Stats   — PoolStats, MainStats
+#   Routing — SwapRoute, SwapStep
+#   Candles — OhlcvCandle
+
+scalar PublicKey
+scalar BigInt
+scalar Float
+
+# ---------------------------------------------------------------------------
+# AMM v4 — Constant-product pool account (Raydium_LiquidityPoolv4)
+# Sourced from real field names returned by Shyft indexer.
+# ---------------------------------------------------------------------------
+type LiquidityPoolv4 {
+  pubkey: PublicKey!
+  baseMint: PublicKey!
+  quoteMint: PublicKey!
+  lpMint: PublicKey!
+  baseVault: PublicKey!
+  quoteVault: PublicKey!
+  lpVault: PublicKey!
+  openOrders: PublicKey!
+  targetOrders: PublicKey!
+  marketId: PublicKey!
+  marketProgramId: PublicKey!
+  owner: PublicKey!
+  withdrawQueue: PublicKey!
+
+  baseDecimal: Int!
+  quoteDecimal: Int!
+  baseLotSize: BigInt!
+  quoteLotSize: BigInt!
+
+  tradeFeeNumerator: BigInt!
+  tradeFeeDenominator: BigInt!
+  swapFeeNumerator: BigInt!
+  swapFeeDenominator: BigInt!
+
+  swapBaseInAmount: BigInt!
+  swapBaseOutAmount: BigInt!
+  swapQuoteInAmount: BigInt!
+  swapQuoteOutAmount: BigInt!
+  swapBase2QuoteFee: BigInt!
+  swapQuote2BaseFee: BigInt!
+
+  lpReserve: BigInt!
+  poolOpenTime: BigInt!
+  orderbookToInitTime: BigInt!
+
+  status: Int!
+  state: Int!
+  depth: Int!
+  nonce: Int!
+  maxOrder: Int!
+  resetFlag: Int!
+
+  baseTotalPnl: BigInt!
+  quoteTotalPnl: BigInt!
+  baseNeedTakePnl: BigInt!
+  quoteNeedTakePnl: BigInt!
+
+  pnlNumerator: BigInt!
+  pnlDenominator: BigInt!
+  amountWaveRatio: BigInt!
+  minSeparateNumerator: BigInt!
+  minSeparateDenominator: BigInt!
+  minSize: BigInt!
+  volMaxCutRatio: BigInt!
+  minPriceMultiplier: BigInt!
+  maxPriceMultiplier: BigInt!
+  systemDecimalValue: BigInt!
+  punishCoinAmount: BigInt!
+  punishPcAmount: BigInt!
+}
+
+# ---------------------------------------------------------------------------
+# CLMM — Concentrated Liquidity Market Maker pool state (Raydium_PoolState)
+# ---------------------------------------------------------------------------
+type PoolState {
+  pubkey: PublicKey!
+  ammConfig: PublicKey!
+  owner: PublicKey!
+  tokenMint0: PublicKey!
+  tokenMint1: PublicKey!
+  tokenVault0: PublicKey!
+  tokenVault1: PublicKey!
+  observationKey: PublicKey!
+  mintDecimals0: Int!
+  mintDecimals1: Int!
+  tickSpacing: Int!
+  liquidity: BigInt!
+  sqrtPriceX64: BigInt!
+  tickCurrent: Int!
+  feeGrowthGlobal0X64: BigInt!
+  feeGrowthGlobal1X64: BigInt!
+  protocolFeesToken0: BigInt!
+  protocolFeesToken1: BigInt!
+  swapInAmountToken0: BigInt!
+  swapOutAmountToken1: BigInt!
+  swapInAmountToken1: BigInt!
+  swapOutAmountToken0: BigInt!
+  status: Int!
+  totalFeesToken0: BigInt!
+  totalFeesClaimedToken0: BigInt!
+  totalFeesToken1: BigInt!
+  totalFeesClaimedToken1: BigInt!
+  fundFeesToken0: BigInt!
+  fundFeesToken1: BigInt!
+  openTime: BigInt!
+  recentEpoch: BigInt!
+}
+
+# ---------------------------------------------------------------------------
+# CLMM — Per-wallet LP position NFT (Raydium_PersonalPositionState)
+# ---------------------------------------------------------------------------
+type PersonalPositionState {
+  pubkey: PublicKey!
+  bump: Int!
+  nftMint: PublicKey!
+  poolId: PublicKey!
+  tickLowerIndex: Int!
+  tickUpperIndex: Int!
+  liquidity: BigInt!
+  feeGrowthInside0LastX64: BigInt!
+  feeGrowthInside1LastX64: BigInt!
+  tokenFeesOwed0: BigInt!
+  tokenFeesOwed1: BigInt!
+  rewardInfos: [PositionRewardInfo!]!
+  updatedRewardInfos: [PositionRewardInfo!]!
+}
+
+type PositionRewardInfo {
+  growthInsideLastX64: BigInt!
+  rewardAmountOwed: BigInt!
+}
+
+# ---------------------------------------------------------------------------
+# CLMM — Protocol position state (Raydium_ProtocolPositionState)
+# ---------------------------------------------------------------------------
+type ProtocolPositionState {
+  pubkey: PublicKey!
+  bump: Int!
+  poolId: PublicKey!
+  tickLowerIndex: Int!
+  tickUpperIndex: Int!
+  liquidity: BigInt!
+  feeGrowthInside0LastX64: BigInt!
+  feeGrowthInside1LastX64: BigInt!
+  tokenFeesOwed0: BigInt!
+  tokenFeesOwed1: BigInt!
+  rewardGrowthInside: [BigInt!]!
+}
+
+# ---------------------------------------------------------------------------
+# CLMM — Tick array (Raydium_TickArrayState)
+# ---------------------------------------------------------------------------
+type TickArrayState {
+  pubkey: PublicKey!
+  poolId: PublicKey!
+  startTickIndex: Int!
+  ticks: [TickState!]!
+  initializedTickCount: Int!
+}
+
+type TickState {
+  tick: Int!
+  liquidityNet: BigInt!
+  liquidityGross: BigInt!
+  feeGrowthOutside0X64: BigInt!
+  feeGrowthOutside1X64: BigInt!
+  tickCumulativeOutside: BigInt!
+  secondsPerLiquidityOutsideX64: BigInt!
+  secondsOutside: Int!
+  rewardGrowthsOutside: [BigInt!]!
+}
+
+# ---------------------------------------------------------------------------
+# Farms (Raydium_FarmState / Raydium_FarmerState)
+# ---------------------------------------------------------------------------
+type FarmState {
+  pubkey: PublicKey!
+  state: Int!
+  nonce: Int!
+  lpVault: PublicKey!
+  rewardInfos: [FarmRewardInfo!]!
+  totalRewardEmissionsPerSecond: [BigInt!]!
+}
+
+type FarmRewardInfo {
+  rewardMint: PublicKey!
+  rewardVault: PublicKey!
+  totalReward: BigInt!
+  totalRewardEmissioned: BigInt!
+  remainingReward: BigInt!
+  rewardOpenTime: BigInt!
+  rewardEndTime: BigInt!
+  rewardPerSecond: BigInt!
+  rewardSender: PublicKey!
+}
+
+type FarmerState {
+  pubkey: PublicKey!
+  farmId: PublicKey!
+  owner: PublicKey!
+  stakedAmount: BigInt!
+  rewardDebts: [BigInt!]!
+}
+
+# ---------------------------------------------------------------------------
+# Token / Mint info (from Raydium REST — modelled for GraphQL parity)
+# ---------------------------------------------------------------------------
+type TokenInfo {
+  address: PublicKey!
+  chainId: Int!
+  decimals: Int!
+  name: String!
+  symbol: String!
+  logoURI: String
+  tags: [String!]!
+  extensions: TokenExtensions
+}
+
+type TokenExtensions {
+  coingeckoId: String
+  website: String
+  twitter: String
+  discord: String
+}
+
+type MintInfo {
+  address: PublicKey!
+  programId: PublicKey!
+  decimals: Int!
+  supply: BigInt!
+  mintAuthority: PublicKey
+  freezeAuthority: PublicKey
+}
+
+# ---------------------------------------------------------------------------
+# Pool analytics stats (from Raydium REST v3 — modelled for GraphQL parity)
+# ---------------------------------------------------------------------------
+type PoolStats {
+  id: PublicKey!
+  mintA: TokenInfo!
+  mintB: TokenInfo!
+  price: Float!
+  mintAmountA: Float!
+  mintAmountB: Float!
+  feeRate: Float!
+  openTime: BigInt!
+  tvl: Float!
+  day: PoolPeriodStats!
+  week: PoolPeriodStats!
+  month: PoolPeriodStats!
+  poolType: PoolType!
+  poolName: String!
+  lpMint: PublicKey!
+}
+
+type PoolPeriodStats {
+  volume: Float!
+  volumeQuote: Float!
+  volumeFee: Float!
+  apr: Float!
+  feeApr: Float!
+  priceMin: Float!
+  priceMax: Float!
+  rewardApr: [Float!]!
+}
+
+enum PoolType {
+  StandardAmm
+  ConcentratedLiquidity
+  ConstantProductMM
+}
+
+# ---------------------------------------------------------------------------
+# Global statistics
+# ---------------------------------------------------------------------------
+type MainStats {
+  tvl: Float!
+  volume24h: Float!
+}
+
+# ---------------------------------------------------------------------------
+# Swap routing
+# ---------------------------------------------------------------------------
+type SwapRoute {
+  amountIn: BigInt!
+  amountOut: BigInt!
+  amountOutMin: BigInt!
+  priceImpact: Float!
+  slippage: Float!
+  routePlan: [SwapStep!]!
+  inputMint: PublicKey!
+  outputMint: PublicKey!
+}
+
+type SwapStep {
+  poolId: PublicKey!
+  inputMint: PublicKey!
+  outputMint: PublicKey!
+  feeRate: Float!
+  inAmount: BigInt!
+  outAmount: BigInt!
+  remainingAccounts: [PublicKey!]!
+}
+
+# ---------------------------------------------------------------------------
+# OHLCV candles (price history)
+# ---------------------------------------------------------------------------
+type OhlcvCandle {
+  time: BigInt!
+  open: Float!
+  high: Float!
+  low: Float!
+  close: Float!
+  volume: Float!
+}
+
+# ---------------------------------------------------------------------------
+# Hasura-style boolean expression inputs (subset — for documentation)
+# ---------------------------------------------------------------------------
+input PublicKey_comparison_exp {
+  _eq: PublicKey
+  _in: [PublicKey!]
+  _neq: PublicKey
+}
+
+input Int_comparison_exp {
+  _eq: Int
+  _gte: Int
+  _lte: Int
+  _gt: Int
+  _lt: Int
+}
+
+input LiquidityPoolv4_bool_exp {
+  pubkey: PublicKey_comparison_exp
+  baseMint: PublicKey_comparison_exp
+  quoteMint: PublicKey_comparison_exp
+  status: Int_comparison_exp
+}
+
+input PoolState_bool_exp {
+  pubkey: PublicKey_comparison_exp
+  tokenMint0: PublicKey_comparison_exp
+  tokenMint1: PublicKey_comparison_exp
+  status: Int_comparison_exp
+}
+
+# ---------------------------------------------------------------------------
+# Root Query type
+# ---------------------------------------------------------------------------
+type Query {
+  # AMM v4 pools — primary Shyft indexed type
+  Raydium_LiquidityPoolv4(
+    where: LiquidityPoolv4_bool_exp
+    limit: Int
+    offset: Int
+    order_by: [LiquidityPoolv4_order_by!]
+  ): [LiquidityPoolv4!]!
+
+  Raydium_LiquidityPoolv4_aggregate(
+    where: LiquidityPoolv4_bool_exp
+  ): LiquidityPoolv4_aggregate!
+
+  # CLMM pools
+  Raydium_PoolState(
+    where: PoolState_bool_exp
+    limit: Int
+    offset: Int
+  ): [PoolState!]!
+
+  # CLMM positions
+  Raydium_PersonalPositionState(
+    where: PersonalPositionState_bool_exp
+    limit: Int
+    offset: Int
+  ): [PersonalPositionState!]!
+
+  Raydium_ProtocolPositionState(
+    where: ProtocolPositionState_bool_exp
+    limit: Int
+    offset: Int
+  ): [ProtocolPositionState!]!
+
+  Raydium_TickArrayState(
+    where: TickArrayState_bool_exp
+    limit: Int
+    offset: Int
+  ): [TickArrayState!]!
+
+  # Farms
+  Raydium_FarmState(limit: Int, offset: Int): [FarmState!]!
+  Raydium_FarmerState(limit: Int, offset: Int): [FarmerState!]!
+
+  # Analytics (Raydium REST v3 — conceptual GraphQL equivalents)
+  poolStats(ids: [PublicKey!]!): [PoolStats!]!
+  mainStats: MainStats!
+  tokenInfo(mints: [PublicKey!]!): [TokenInfo!]!
+  mintPrices(mints: [PublicKey!]!): [MintPrice!]!
+  swapRoute(
+    inputMint: PublicKey!
+    outputMint: PublicKey!
+    amount: BigInt!
+    slippage: Float!
+  ): SwapRoute!
+  ohlcvCandles(
+    poolId: PublicKey!
+    resolution: CandleResolution!
+    startTime: BigInt!
+    endTime: BigInt!
+  ): [OhlcvCandle!]!
+}
+
+type LiquidityPoolv4_aggregate {
+  aggregate: LiquidityPoolv4_aggregate_fields
+}
+
+type LiquidityPoolv4_aggregate_fields {
+  count: Int!
+}
+
+type MintPrice {
+  mint: PublicKey!
+  price: Float!
+}
+
+enum CandleResolution {
+  M1
+  M5
+  M15
+  M30
+  H1
+  H4
+  D1
+  W1
+}
+
+# ---------------------------------------------------------------------------
+# Order-by inputs (abbreviated)
+# ---------------------------------------------------------------------------
+input LiquidityPoolv4_order_by {
+  poolOpenTime: order_by
+  lpReserve: order_by
+  status: order_by
+}
+
+enum order_by {
+  asc
+  desc
+  asc_nulls_first
+  asc_nulls_last
+  desc_nulls_first
+  desc_nulls_last
+}
+
+# Stubs for filter inputs referenced above
+input PersonalPositionState_bool_exp { pubkey: PublicKey_comparison_exp }
+input ProtocolPositionState_bool_exp { pubkey: PublicKey_comparison_exp }
+input TickArrayState_bool_exp { poolId: PublicKey_comparison_exp }
