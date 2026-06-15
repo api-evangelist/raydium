@@ -1,0 +1,362 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Raydium REST API v3",
+    "version": "3.0.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Get latest / least supported API versions",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api-v3.raydium.io/main/version"
+      },
+      "docs": "Get latest / least supported API versions"
+    },
+    {
+      "info": {
+        "name": "Get protocol-level info (24h volume, TVL)",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api-v3.raydium.io/main/info"
+      },
+      "docs": "Get protocol-level info (24h volume, TVL)"
+    },
+    {
+      "info": {
+        "name": "Get current Solana chain time used by Raydium",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api-v3.raydium.io/main/chain-time"
+      },
+      "docs": "Get current Solana chain time used by Raydium"
+    },
+    {
+      "info": {
+        "name": "List Solana RPC endpoints used by the UI",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api-v3.raydium.io/main/rpcs"
+      },
+      "docs": "List Solana RPC endpoints used by the UI"
+    },
+    {
+      "info": {
+        "name": "List Raydium stake pools",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api-v3.raydium.io/main/stake-pools"
+      },
+      "docs": "List Raydium stake pools"
+    },
+    {
+      "info": {
+        "name": "Get CLMM configuration",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api-v3.raydium.io/main/clmm-config"
+      },
+      "docs": "Get CLMM configuration"
+    },
+    {
+      "info": {
+        "name": "Get CPMM configuration",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api-v3.raydium.io/main/cpmm-config"
+      },
+      "docs": "Get CPMM configuration"
+    },
+    {
+      "info": {
+        "name": "Get current auto priority fee suggestion",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api-v3.raydium.io/main/auto-fee"
+      },
+      "docs": "Get current auto priority fee suggestion"
+    },
+    {
+      "info": {
+        "name": "Get token / mint list",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api-v3.raydium.io/mint/list"
+      },
+      "docs": "Get token / mint list"
+    },
+    {
+      "info": {
+        "name": "Look up mints by IDs",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api-v3.raydium.io/mint/ids",
+        "params": [
+          {
+            "name": "mints",
+            "value": "",
+            "type": "query",
+            "description": "Comma-separated list of token mint addresses."
+          }
+        ]
+      },
+      "docs": "Look up mints by IDs"
+    },
+    {
+      "info": {
+        "name": "Get spot prices for mints",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api-v3.raydium.io/mint/price",
+        "params": [
+          {
+            "name": "mints",
+            "value": "",
+            "type": "query",
+            "description": "Comma-separated mint addresses."
+          }
+        ]
+      },
+      "docs": "Get spot prices for mints"
+    },
+    {
+      "info": {
+        "name": "List pools with filter / sort / pagination",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api-v3.raydium.io/pools/info/list-v2",
+        "params": [
+          {
+            "name": "poolType",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "poolSortField",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "sortType",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "pageSize",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "page",
+            "value": "",
+            "type": "query"
+          }
+        ]
+      },
+      "docs": "List pools with filter / sort / pagination"
+    },
+    {
+      "info": {
+        "name": "Look up pools by ID",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api-v3.raydium.io/pools/info/ids",
+        "params": [
+          {
+            "name": "ids",
+            "value": "",
+            "type": "query"
+          }
+        ]
+      },
+      "docs": "Look up pools by ID"
+    },
+    {
+      "info": {
+        "name": "Look up pools by LP mint",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api-v3.raydium.io/pools/info/lps",
+        "params": [
+          {
+            "name": "lps",
+            "value": "",
+            "type": "query"
+          }
+        ]
+      },
+      "docs": "Look up pools by LP mint"
+    },
+    {
+      "info": {
+        "name": "Get on-chain keys for pools by ID",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api-v3.raydium.io/pools/key/ids",
+        "params": [
+          {
+            "name": "ids",
+            "value": "",
+            "type": "query"
+          }
+        ]
+      },
+      "docs": "Get on-chain keys for pools by ID"
+    },
+    {
+      "info": {
+        "name": "Get CLMM liquidity-by-tick line",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api-v3.raydium.io/pools/line/liquidity",
+        "params": [
+          {
+            "name": "id",
+            "value": "",
+            "type": "query"
+          }
+        ]
+      },
+      "docs": "Get CLMM liquidity-by-tick line"
+    },
+    {
+      "info": {
+        "name": "Get CLMM position line for a pool",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api-v3.raydium.io/pools/line/position",
+        "params": [
+          {
+            "name": "id",
+            "value": "",
+            "type": "query"
+          }
+        ]
+      },
+      "docs": "Get CLMM position line for a pool"
+    },
+    {
+      "info": {
+        "name": "Look up farms by ID",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api-v3.raydium.io/farms/info/ids",
+        "params": [
+          {
+            "name": "ids",
+            "value": "",
+            "type": "query"
+          }
+        ]
+      },
+      "docs": "Look up farms by ID"
+    },
+    {
+      "info": {
+        "name": "Get farms by LP mint",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api-v3.raydium.io/farms/info/lp",
+        "params": [
+          {
+            "name": "lp",
+            "value": "",
+            "type": "query"
+          }
+        ]
+      },
+      "docs": "Get farms by LP mint"
+    },
+    {
+      "info": {
+        "name": "Get on-chain keys for farms by ID",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api-v3.raydium.io/farms/key/ids",
+        "params": [
+          {
+            "name": "ids",
+            "value": "",
+            "type": "query"
+          }
+        ]
+      },
+      "docs": "Get on-chain keys for farms by ID"
+    },
+    {
+      "info": {
+        "name": "Get aggregated farm info",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api-v3.raydium.io/main/farm/info"
+      },
+      "docs": "Get aggregated farm info"
+    },
+    {
+      "info": {
+        "name": "Get farm APR / TVL series",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api-v3.raydium.io/main/farm-apr-tv"
+      },
+      "docs": "Get farm APR / TVL series"
+    },
+    {
+      "info": {
+        "name": "Service availability check",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api-v3.raydium.io/v3/main/AvailabilityCheckAPI"
+      },
+      "docs": "Service availability check"
+    }
+  ],
+  "bundled": true
+}

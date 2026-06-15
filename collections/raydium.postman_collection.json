@@ -1,0 +1,1789 @@
+{
+  "item": [
+    {
+      "id": "a305b91f-bd2b-4c9b-a56d-a57a67e41269",
+      "name": "Get latest / least supported API versions",
+      "request": {
+        "name": "Get latest / least supported API versions",
+        "description": {},
+        "url": {
+          "path": [
+            "main",
+            "version"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "05ff1018-f8fa-4a8a-8112-fbc694b7c53a",
+          "name": "Version envelope.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "main",
+                "version"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"id\": \"string\",\n  \"success\": true,\n  \"data\": {\n    \"latest\": \"string\",\n    \"least\": \"string\"\n  }\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "451c0c9c-7a92-47c5-bc34-0ae6eaa42f05",
+      "name": "Get protocol-level info (24h volume, TVL)",
+      "request": {
+        "name": "Get protocol-level info (24h volume, TVL)",
+        "description": {},
+        "url": {
+          "path": [
+            "main",
+            "info"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "549b0dc7-5093-4735-bacc-ac218fcbf663",
+          "name": "Aggregate protocol info.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "main",
+                "info"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"id\": \"string\",\n  \"success\": false,\n  \"data\": {\n    \"volume24\": 8617.465887755448,\n    \"tvl\": 8678.461218301027\n  }\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "988cbaa0-48da-4a78-a20e-bef5f60948de",
+      "name": "Get current Solana chain time used by Raydium",
+      "request": {
+        "name": "Get current Solana chain time used by Raydium",
+        "description": {},
+        "url": {
+          "path": [
+            "main",
+            "chain-time"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "0f9ba4f7-804f-474d-b656-f6a8918eb86a",
+          "name": "Chain time.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "main",
+                "chain-time"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"id\": \"string\",\n  \"success\": true,\n  \"data\": {}\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "7d11baf8-cbe5-49f4-bba7-d586aec6f58d",
+      "name": "List Solana RPC endpoints used by the UI",
+      "request": {
+        "name": "List Solana RPC endpoints used by the UI",
+        "description": {},
+        "url": {
+          "path": [
+            "main",
+            "rpcs"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "5d2d4086-27dc-4455-ba9d-8320d4da9e21",
+          "name": "RPC list.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "main",
+                "rpcs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"id\": \"string\",\n  \"success\": true,\n  \"data\": {}\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "55515cdd-9d51-4c23-9ac8-23bbdb0eb7e5",
+      "name": "List Raydium stake pools",
+      "request": {
+        "name": "List Raydium stake pools",
+        "description": {},
+        "url": {
+          "path": [
+            "main",
+            "stake-pools"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "559f6648-253d-419b-9a68-5d770474c523",
+          "name": "Stake pool list.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "main",
+                "stake-pools"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"id\": \"string\",\n  \"success\": true,\n  \"data\": {}\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "c948f329-1573-4ed8-89e7-130bf4add355",
+      "name": "Get CLMM configuration",
+      "request": {
+        "name": "Get CLMM configuration",
+        "description": {},
+        "url": {
+          "path": [
+            "main",
+            "clmm-config"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "0a5ef499-b7c0-4154-ba69-627833c48aab",
+          "name": "CLMM config.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "main",
+                "clmm-config"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"id\": \"string\",\n  \"success\": true,\n  \"data\": {}\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "9360e114-876c-4a07-bd18-d852e4a22d3d",
+      "name": "Get CPMM configuration",
+      "request": {
+        "name": "Get CPMM configuration",
+        "description": {},
+        "url": {
+          "path": [
+            "main",
+            "cpmm-config"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "d5343a63-3deb-4830-bb9b-b1fc935b9302",
+          "name": "CPMM config.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "main",
+                "cpmm-config"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"id\": \"string\",\n  \"success\": true,\n  \"data\": {}\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "977af17d-29f2-4296-850e-768cd012a041",
+      "name": "Get current auto priority fee suggestion",
+      "request": {
+        "name": "Get current auto priority fee suggestion",
+        "description": {},
+        "url": {
+          "path": [
+            "main",
+            "auto-fee"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "c2d44831-8ec8-4486-8b5d-46bdedb38372",
+          "name": "Suggested compute-unit fee.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "main",
+                "auto-fee"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"id\": \"string\",\n  \"success\": true,\n  \"data\": {}\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "4a97f6df-c222-40cd-ae34-dcad8bae8788",
+      "name": "Get token / mint list",
+      "request": {
+        "name": "Get token / mint list",
+        "description": {},
+        "url": {
+          "path": [
+            "mint",
+            "list"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "f98638cf-f2e1-49c5-ac14-9a3ab7a723ae",
+          "name": "Token list.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "mint",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"id\": \"string\",\n  \"success\": true,\n  \"data\": {}\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "f1757902-e793-44fd-8a03-50b2c29cbdf3",
+      "name": "Look up mints by IDs",
+      "request": {
+        "name": "Look up mints by IDs",
+        "description": {},
+        "url": {
+          "path": [
+            "mint",
+            "ids"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "mints",
+              "value": "<string>",
+              "description": "Comma-separated list of token mint addresses."
+            }
+          ],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "8d779834-8e2e-4b17-956e-d324fee39ff9",
+          "name": "Mint metadata.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "mint",
+                "ids"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "mints",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"id\": \"string\",\n  \"success\": true,\n  \"data\": {}\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "79433e34-d807-404f-8a7a-4a6d3bb2ed4e",
+      "name": "Get spot prices for mints",
+      "request": {
+        "name": "Get spot prices for mints",
+        "description": {},
+        "url": {
+          "path": [
+            "mint",
+            "price"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "mints",
+              "value": "<string>",
+              "description": "Comma-separated mint addresses."
+            }
+          ],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "5bceacc1-6aaa-4ebe-953d-65f0c12b567d",
+          "name": "Price map.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "mint",
+                "price"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "mints",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"id\": \"string\",\n  \"success\": true,\n  \"data\": {}\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "899c9d6d-c1ba-45ad-b0fd-8fc1330deb0d",
+      "name": "List pools with filter / sort / pagination",
+      "request": {
+        "name": "List pools with filter / sort / pagination",
+        "description": {},
+        "url": {
+          "path": [
+            "pools",
+            "info",
+            "list-v2"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "poolType",
+              "value": "<string>"
+            },
+            {
+              "disabled": false,
+              "key": "poolSortField",
+              "value": "<string>"
+            },
+            {
+              "disabled": false,
+              "key": "sortType",
+              "value": "<string>"
+            },
+            {
+              "disabled": false,
+              "key": "pageSize",
+              "value": "<integer>"
+            },
+            {
+              "disabled": false,
+              "key": "page",
+              "value": "<integer>"
+            }
+          ],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "2fd53a3d-4429-4003-87bb-4233bd52e3a8",
+          "name": "Pool list.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "pools",
+                "info",
+                "list-v2"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "poolType",
+                  "value": "<string>"
+                },
+                {
+                  "key": "poolSortField",
+                  "value": "<string>"
+                },
+                {
+                  "key": "sortType",
+                  "value": "<string>"
+                },
+                {
+                  "key": "pageSize",
+                  "value": "<integer>"
+                },
+                {
+                  "key": "page",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"id\": \"string\",\n  \"success\": true,\n  \"data\": {}\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "7565d569-cc10-42b8-a15c-831aaf52b729",
+      "name": "Look up pools by ID",
+      "request": {
+        "name": "Look up pools by ID",
+        "description": {},
+        "url": {
+          "path": [
+            "pools",
+            "info",
+            "ids"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "ids",
+              "value": "<string>"
+            }
+          ],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "f6436f02-ea1c-4bce-95e2-2d34c569ac37",
+          "name": "Pool detail.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "pools",
+                "info",
+                "ids"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "ids",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"id\": \"string\",\n  \"success\": true,\n  \"data\": {}\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "f9301e87-7697-47ac-b157-d7b17340a58a",
+      "name": "Look up pools by LP mint",
+      "request": {
+        "name": "Look up pools by LP mint",
+        "description": {},
+        "url": {
+          "path": [
+            "pools",
+            "info",
+            "lps"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "lps",
+              "value": "<string>"
+            }
+          ],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "4be8742e-5ba5-4123-a279-001b0aa0cbfa",
+          "name": "Pool detail by LP mint.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "pools",
+                "info",
+                "lps"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "lps",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"id\": \"string\",\n  \"success\": true,\n  \"data\": {}\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "b0b35906-ea02-4652-9bcc-ea950d1c0590",
+      "name": "Get on-chain keys for pools by ID",
+      "request": {
+        "name": "Get on-chain keys for pools by ID",
+        "description": {},
+        "url": {
+          "path": [
+            "pools",
+            "key",
+            "ids"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "ids",
+              "value": "<string>"
+            }
+          ],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "73fdef11-1ba2-4bc7-9665-e402a9ea2212",
+          "name": "Pool keys.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "pools",
+                "key",
+                "ids"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "ids",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"id\": \"string\",\n  \"success\": true,\n  \"data\": {}\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "781cbe19-de93-4caf-b15d-36400049c3a8",
+      "name": "Get CLMM liquidity-by-tick line",
+      "request": {
+        "name": "Get CLMM liquidity-by-tick line",
+        "description": {},
+        "url": {
+          "path": [
+            "pools",
+            "line",
+            "liquidity"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "id",
+              "value": "<string>"
+            }
+          ],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "fd454227-8602-4ddd-a8b8-1cad8e807015",
+          "name": "Liquidity line.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "pools",
+                "line",
+                "liquidity"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"id\": \"string\",\n  \"success\": true,\n  \"data\": {}\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "a1ac1d7e-f1d9-4304-8d57-ea447c4831a5",
+      "name": "Get CLMM position line for a pool",
+      "request": {
+        "name": "Get CLMM position line for a pool",
+        "description": {},
+        "url": {
+          "path": [
+            "pools",
+            "line",
+            "position"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "id",
+              "value": "<string>"
+            }
+          ],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "5b837f03-9415-4e3e-8f6e-35509bc0849b",
+          "name": "Position line.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "pools",
+                "line",
+                "position"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"id\": \"string\",\n  \"success\": true,\n  \"data\": {}\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "3b3c9594-2b6d-4fb0-81b7-c0d32b4c738e",
+      "name": "Look up farms by ID",
+      "request": {
+        "name": "Look up farms by ID",
+        "description": {},
+        "url": {
+          "path": [
+            "farms",
+            "info",
+            "ids"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "ids",
+              "value": "<string>"
+            }
+          ],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "d1d886a1-a22d-43b2-85b8-e48d4437d6dd",
+          "name": "Farm info.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "farms",
+                "info",
+                "ids"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "ids",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"id\": \"string\",\n  \"success\": true,\n  \"data\": {}\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "303a6081-8989-46bf-91e5-2171b6e1414e",
+      "name": "Get farms by LP mint",
+      "request": {
+        "name": "Get farms by LP mint",
+        "description": {},
+        "url": {
+          "path": [
+            "farms",
+            "info",
+            "lp"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "lp",
+              "value": "<string>"
+            }
+          ],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "d9a71fc0-ead2-4c34-abd1-ad334608c13f",
+          "name": "Farm info.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "farms",
+                "info",
+                "lp"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "lp",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"id\": \"string\",\n  \"success\": true,\n  \"data\": {}\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "090b3f87-28cd-45d4-91c5-bd38dd9325ec",
+      "name": "Get on-chain keys for farms by ID",
+      "request": {
+        "name": "Get on-chain keys for farms by ID",
+        "description": {},
+        "url": {
+          "path": [
+            "farms",
+            "key",
+            "ids"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "ids",
+              "value": "<string>"
+            }
+          ],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "db4788c5-c053-48f8-9e05-5d2cc23dcbb6",
+          "name": "Farm keys.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "farms",
+                "key",
+                "ids"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "ids",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"id\": \"string\",\n  \"success\": true,\n  \"data\": {}\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "8bb5c351-db81-45ec-a6d8-5ff030789c81",
+      "name": "Get aggregated farm info",
+      "request": {
+        "name": "Get aggregated farm info",
+        "description": {},
+        "url": {
+          "path": [
+            "main",
+            "farm",
+            "info"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "d3934bf4-9628-4759-aefb-05aa0b6bfca9",
+          "name": "Farm info.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "main",
+                "farm",
+                "info"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"id\": \"string\",\n  \"success\": true,\n  \"data\": {}\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "8f33ae7a-3b22-40d0-a1d9-eab2af462083",
+      "name": "Get farm APR / TVL series",
+      "request": {
+        "name": "Get farm APR / TVL series",
+        "description": {},
+        "url": {
+          "path": [
+            "main",
+            "farm-apr-tv"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "95ca8ee8-b0a8-48b3-afe5-ffae4f329084",
+          "name": "APR / TVL series.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "main",
+                "farm-apr-tv"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"id\": \"string\",\n  \"success\": true,\n  \"data\": {}\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "c4d0f4ee-9a7e-4277-a18a-4e01a97731b5",
+      "name": "Service availability check",
+      "request": {
+        "name": "Service availability check",
+        "description": {},
+        "url": {
+          "path": [
+            "v3",
+            "main",
+            "AvailabilityCheckAPI"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "a713e7fb-014b-42cc-b5a5-c8796c77565e",
+          "name": "Availability response.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v3",
+                "main",
+                "AvailabilityCheckAPI"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"id\": \"string\",\n  \"success\": true,\n  \"data\": {}\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api-v3.raydium.io",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "f0d9d896-8376-4afc-bb65-0b106f20baaf",
+    "name": "Raydium REST API v3",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Public, unauthenticated REST API used by the Raydium UI and integrators for\nSolana AMM and CLMM pool data, farm rewards, token / mint metadata, prices,\nchain time, and swap quote/transaction helpers. Endpoint paths are taken\nfrom the open-source raydium-sdk-V2 url table; HTTP methods are GET except\nwhere the path implies a transactional helper.\n\n\nContact Support:\n Name: Raydium",
+      "type": "text/plain"
+    }
+  }
+}
