@@ -2,7 +2,7 @@ aid: raydium
 url: https://raw.githubusercontent.com/api-evangelist/raydium/refs/heads/main/apis.yml
 name: Raydium
 kind: protocol
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
 - Web3
 - Solana
@@ -28,7 +28,7 @@ apis:
   - Tokens
   - Swap Quote
   - Solana
-  image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
   baseURL: https://api-v3.raydium.io
   humanURL: https://api-v3.raydium.io/docs/
   description: REST API for Raydium pool list, CLMM pools, farm rewards, token metadata,
@@ -58,7 +58,7 @@ apis:
   - On-chain
   - CLMM
   - AMM
-  image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
   baseURL: https://solscan.io/account/raydium
   humanURL: https://docs.raydium.io/
   description: Raydium's swap, AMM, CLMM, farm, and launchpad programs deployed on
