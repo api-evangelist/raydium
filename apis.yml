@@ -76,6 +76,8 @@ apis:
   - Direct on-chain swap and LP execution
   - Bot strategies on Solana
 common:
+- type: DomainSecurity
+  url: security/raydium-domain-security.yml
 - type: LinkedIn
   url: https://www.linkedin.com/company/raydium
 - type: Portal
