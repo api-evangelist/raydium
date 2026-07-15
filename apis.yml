@@ -76,6 +76,8 @@ apis:
   - Direct on-chain swap and LP execution
   - Bot strategies on Solana
 common:
+- type: AgenticAccess
+  url: agentic-access/raydium-agentic-access.yml
 - type: DomainSecurity
   url: security/raydium-domain-security.yml
 - type: LinkedIn
