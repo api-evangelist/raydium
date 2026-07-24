@@ -1,0 +1,87 @@
+openapi: 3.1.0
+info:
+  title: Raydium REST API v3 Farms Mint API
+  description: 'Public, unauthenticated REST API used by the Raydium UI and integrators for
+
+    Solana AMM and CLMM pool data, farm rewards, token / mint metadata, prices,
+
+    chain time, and swap quote/transaction helpers. Endpoint paths are taken
+
+    from the open-source raydium-sdk-V2 url table; HTTP methods are GET except
+
+    where the path implies a transactional helper.
+
+    '
+  version: 3.0.1
+  contact:
+    name: Raydium
+    url: https://api-v3.raydium.io/docs/
+servers:
+- url: https://api-v3.raydium.io
+  description: Raydium public API
+tags:
+- name: Mint
+paths:
+  /mint/list:
+    get:
+      summary: Get token / mint list
+      operationId: getMintList
+      responses:
+        '200':
+          description: Token list.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Envelope'
+      tags:
+      - Mint
+  /mint/ids:
+    get:
+      summary: Look up mints by IDs
+      operationId: getMintsByIds
+      parameters:
+      - name: mints
+        in: query
+        description: Comma-separated list of token mint addresses.
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Mint metadata.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Envelope'
+      tags:
+      - Mint
+  /mint/price:
+    get:
+      summary: Get spot prices for mints
+      operationId: getMintPrices
+      parameters:
+      - name: mints
+        in: query
+        description: Comma-separated mint addresses.
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Price map.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Envelope'
+      tags:
+      - Mint
+components:
+  schemas:
+    Envelope:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Request UUID.
+        success:
+          type: boolean
+        data:
+          description: Response payload (shape varies per endpoint).
