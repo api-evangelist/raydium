@@ -2,7 +2,19 @@ aid: raydium
 url: https://raw.githubusercontent.com/api-evangelist/raydium/refs/heads/main/apis.yml
 name: Raydium
 kind: protocol
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Freemium
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/raydium.png
 tags:
 - Web3
 - Solana
@@ -31,9 +43,9 @@ apis:
   image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
   baseURL: https://api-v3.raydium.io
   humanURL: https://api-v3.raydium.io/docs/
-  description: REST API for Raydium pool list, CLMM pools, farm rewards, token metadata,
-    swap quote, and price endpoints. Used by raydium.io UI and third-party integrators.
-    JSON output. Free, unauthenticated, fair-use.
+  description: >-
+    REST API for Raydium pool list, CLMM pools, farm rewards, token metadata, swap quote, and price endpoints.
+    Used by raydium.io UI and third-party integrators. JSON output. Free, unauthenticated, fair-use.
   properties:
   - type: Documentation
     url: https://api-v3.raydium.io/docs/
@@ -61,8 +73,7 @@ apis:
   image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
   baseURL: https://solscan.io/account/raydium
   humanURL: https://docs.raydium.io/
-  description: Raydium's swap, AMM, CLMM, farm, and launchpad programs deployed on
-    Solana.
+  description: Raydium's swap, AMM, CLMM, farm, and launchpad programs deployed on Solana.
   properties:
   - type: Documentation
     url: https://docs.raydium.io/
@@ -75,6 +86,46 @@ apis:
   x-use-cases:
   - Direct on-chain swap and LP execution
   - Bot strategies on Solana
+- aid: raydium:raydium-farms-api
+  name: Raydium Farms API
+  description: The Farms API from Raydium — 3 operation(s) for farms.
+  humanURL: https://api-v3.raydium.io/docs/
+  baseURL: https://api-v3.raydium.io
+  tags:
+  - Farms
+  properties:
+  - type: OpenAPI
+    url: openapi/raydium-farms-api-openapi.yml
+- aid: raydium:raydium-main-api
+  name: Raydium Main API
+  description: The Main API from Raydium — 11 operation(s) for main.
+  humanURL: https://api-v3.raydium.io/docs/
+  baseURL: https://api-v3.raydium.io
+  tags:
+  - Main
+  properties:
+  - type: OpenAPI
+    url: openapi/raydium-main-api-openapi.yml
+- aid: raydium:raydium-mint-api
+  name: Raydium Mint API
+  description: The Mint API from Raydium — 3 operation(s) for mint.
+  humanURL: https://api-v3.raydium.io/docs/
+  baseURL: https://api-v3.raydium.io
+  tags:
+  - Mint
+  properties:
+  - type: OpenAPI
+    url: openapi/raydium-mint-api-openapi.yml
+- aid: raydium:raydium-pools-api
+  name: Raydium Pools API
+  description: The Pools API from Raydium — 6 operation(s) for pools.
+  humanURL: https://api-v3.raydium.io/docs/
+  baseURL: https://api-v3.raydium.io
+  tags:
+  - Pools
+  properties:
+  - type: OpenAPI
+    url: openapi/raydium-pools-api-openapi.yml
 common:
 - type: AgenticAccess
   url: agentic-access/raydium-agentic-access.yml
