@@ -1,0 +1,380 @@
+openapi: 3.1.0
+info:
+  title: Raydium REST API v3
+  description: |
+    Public, unauthenticated REST API used by the Raydium UI and integrators for
+    Solana AMM and CLMM pool data, farm rewards, token / mint metadata, prices,
+    chain time, and swap quote/transaction helpers. Endpoint paths are taken
+    from the open-source raydium-sdk-V2 url table; HTTP methods are GET except
+    where the path implies a transactional helper.
+  version: "3.0.1"
+  contact:
+    name: Raydium
+    url: https://api-v3.raydium.io/docs/
+servers:
+  - url: https://api-v3.raydium.io
+    description: Raydium public API
+paths:
+  /main/version:
+    get:
+      summary: Get latest / least supported API versions
+      operationId: getVersion
+      responses:
+        '200':
+          description: Version envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VersionResponse'
+  /main/info:
+    get:
+      summary: Get protocol-level info (24h volume, TVL)
+      operationId: getInfo
+      responses:
+        '200':
+          description: Aggregate protocol info.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InfoResponse'
+  /main/chain-time:
+    get:
+      summary: Get current Solana chain time used by Raydium
+      operationId: getChainTime
+      responses:
+        '200':
+          description: Chain time.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Envelope'
+  /main/rpcs:
+    get:
+      summary: List Solana RPC endpoints used by the UI
+      operationId: getRpcs
+      responses:
+        '200':
+          description: RPC list.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Envelope'
+  /main/stake-pools:
+    get:
+      summary: List Raydium stake pools
+      operationId: getStakePools
+      responses:
+        '200':
+          description: Stake pool list.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Envelope'
+  /main/clmm-config:
+    get:
+      summary: Get CLMM configuration
+      operationId: getClmmConfig
+      responses:
+        '200':
+          description: CLMM config.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Envelope'
+  /main/cpmm-config:
+    get:
+      summary: Get CPMM configuration
+      operationId: getCpmmConfig
+      responses:
+        '200':
+          description: CPMM config.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Envelope'
+  /main/auto-fee:
+    get:
+      summary: Get current auto priority fee suggestion
+      operationId: getAutoFee
+      responses:
+        '200':
+          description: Suggested compute-unit fee.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Envelope'
+  /mint/list:
+    get:
+      summary: Get token / mint list
+      operationId: getMintList
+      responses:
+        '200':
+          description: Token list.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Envelope'
+  /mint/ids:
+    get:
+      summary: Look up mints by IDs
+      operationId: getMintsByIds
+      parameters:
+        - name: mints
+          in: query
+          description: Comma-separated list of token mint addresses.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Mint metadata.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Envelope'
+  /mint/price:
+    get:
+      summary: Get spot prices for mints
+      operationId: getMintPrices
+      parameters:
+        - name: mints
+          in: query
+          description: Comma-separated mint addresses.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Price map.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Envelope'
+  /pools/info/list-v2:
+    get:
+      summary: List pools with filter / sort / pagination
+      operationId: listPools
+      parameters:
+        - name: poolType
+          in: query
+          schema:
+            type: string
+        - name: poolSortField
+          in: query
+          schema:
+            type: string
+        - name: sortType
+          in: query
+          schema:
+            type: string
+            enum: [asc, desc]
+        - name: pageSize
+          in: query
+          schema:
+            type: integer
+        - name: page
+          in: query
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Pool list.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Envelope'
+  /pools/info/ids:
+    get:
+      summary: Look up pools by ID
+      operationId: getPoolsByIds
+      parameters:
+        - name: ids
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Pool detail.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Envelope'
+  /pools/info/lps:
+    get:
+      summary: Look up pools by LP mint
+      operationId: getPoolsByLps
+      parameters:
+        - name: lps
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Pool detail by LP mint.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Envelope'
+  /pools/key/ids:
+    get:
+      summary: Get on-chain keys for pools by ID
+      operationId: getPoolKeys
+      parameters:
+        - name: ids
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Pool keys.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Envelope'
+  /pools/line/liquidity:
+    get:
+      summary: Get CLMM liquidity-by-tick line
+      operationId: getPoolLiquidityLine
+      parameters:
+        - name: id
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Liquidity line.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Envelope'
+  /pools/line/position:
+    get:
+      summary: Get CLMM position line for a pool
+      operationId: getPoolPositionLine
+      parameters:
+        - name: id
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Position line.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Envelope'
+  /farms/info/ids:
+    get:
+      summary: Look up farms by ID
+      operationId: getFarmsByIds
+      parameters:
+        - name: ids
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Farm info.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Envelope'
+  /farms/info/lp:
+    get:
+      summary: Get farms by LP mint
+      operationId: getFarmsByLp
+      parameters:
+        - name: lp
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Farm info.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Envelope'
+  /farms/key/ids:
+    get:
+      summary: Get on-chain keys for farms by ID
+      operationId: getFarmKeys
+      parameters:
+        - name: ids
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Farm keys.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Envelope'
+  /main/farm/info:
+    get:
+      summary: Get aggregated farm info
+      operationId: getFarmInfo
+      responses:
+        '200':
+          description: Farm info.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Envelope'
+  /main/farm-apr-tv:
+    get:
+      summary: Get farm APR / TVL series
+      operationId: getFarmAprTvl
+      responses:
+        '200':
+          description: APR / TVL series.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Envelope'
+  /v3/main/AvailabilityCheckAPI:
+    get:
+      summary: Service availability check
+      operationId: getAvailability
+      responses:
+        '200':
+          description: Availability response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Envelope'
+components:
+  schemas:
+    Envelope:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Request UUID.
+        success:
+          type: boolean
+        data:
+          description: Response payload (shape varies per endpoint).
+    VersionResponse:
+      allOf:
+        - $ref: '#/components/schemas/Envelope'
+        - type: object
+          properties:
+            data:
+              type: object
+              properties:
+                latest:
+                  type: string
+                least:
+                  type: string
+    InfoResponse:
+      allOf:
+        - $ref: '#/components/schemas/Envelope'
+        - type: object
+          properties:
+            data:
+              type: object
+              properties:
+                volume24:
+                  type: number
+                tvl:
+                  type: number
