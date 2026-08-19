@@ -26,7 +26,7 @@ tags:
 - Open Source
 created: '2026-05-08'
 modified: '2026-05-08'
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 description: Raydium is a leading Solana AMM and liquidity provider supporting standard
   AMM, concentrated liquidity (CLMM), and a launchpad. The Raydium API at api-v3.raydium.io
   exposes pool, farm, token, swap quote, and price endpoints used by the Raydium UI
