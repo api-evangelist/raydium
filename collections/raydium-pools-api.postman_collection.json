@@ -1,0 +1,560 @@
+{
+  "item": [
+    {
+      "id": "13e38e8c-eb98-45be-b9c9-33d1e04d1ea0",
+      "name": "Pools",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c9a926f1-0ce4-44a7-adf0-7c1aefc0b465",
+          "name": "List pools with filter / sort / pagination",
+          "request": {
+            "name": "List pools with filter / sort / pagination",
+            "description": {},
+            "url": {
+              "path": [
+                "pools",
+                "info",
+                "list-v2"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "poolType",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "poolSortField",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "sortType",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c428c60f-5e9e-470a-a5b8-ad8bc0f74ab4",
+              "name": "Pool list.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pools",
+                    "info",
+                    "list-v2"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "poolType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "poolSortField",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sortType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"success\": true,\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6fc43d87-9e74-4f81-a408-934b27d7c7d5",
+          "name": "Look up pools by ID",
+          "request": {
+            "name": "Look up pools by ID",
+            "description": {},
+            "url": {
+              "path": [
+                "pools",
+                "info",
+                "ids"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "ids",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "bed10766-7587-4b54-b138-5ff462a2baee",
+              "name": "Pool detail.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pools",
+                    "info",
+                    "ids"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "ids",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"success\": true,\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "aa1fd6ff-45e7-45b7-acbe-da93c1e4cb04",
+          "name": "Look up pools by LP mint",
+          "request": {
+            "name": "Look up pools by LP mint",
+            "description": {},
+            "url": {
+              "path": [
+                "pools",
+                "info",
+                "lps"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "lps",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5d31082f-6105-46a8-bf2b-6521cb9264ca",
+              "name": "Pool detail by LP mint.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pools",
+                    "info",
+                    "lps"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "lps",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"success\": true,\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8c80aa95-7fd5-42f4-88b0-35cdce2a1a08",
+          "name": "Get on-chain keys for pools by ID",
+          "request": {
+            "name": "Get on-chain keys for pools by ID",
+            "description": {},
+            "url": {
+              "path": [
+                "pools",
+                "key",
+                "ids"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "ids",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4495812f-d0ee-480d-b033-a350d1ab1bdd",
+              "name": "Pool keys.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pools",
+                    "key",
+                    "ids"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "ids",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"success\": true,\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5d9f8024-aff6-4274-b8f7-03dd886d97ed",
+          "name": "Get CLMM liquidity-by-tick line",
+          "request": {
+            "name": "Get CLMM liquidity-by-tick line",
+            "description": {},
+            "url": {
+              "path": [
+                "pools",
+                "line",
+                "liquidity"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5d512753-8e85-4c35-831b-5b1ace096cc0",
+              "name": "Liquidity line.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pools",
+                    "line",
+                    "liquidity"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"success\": true,\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ddde20ec-3bf7-4853-b12d-dd837091c306",
+          "name": "Get CLMM position line for a pool",
+          "request": {
+            "name": "Get CLMM position line for a pool",
+            "description": {},
+            "url": {
+              "path": [
+                "pools",
+                "line",
+                "position"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f92a89e1-5783-4898-87dc-da4408982c3a",
+              "name": "Position line.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pools",
+                    "line",
+                    "position"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"success\": true,\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api-v3.raydium.io",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "b0c3ed57-d96d-4092-9052-f3294a10e615",
+    "name": "Raydium REST API v3 Farms Pools API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Public, unauthenticated REST API used by the Raydium UI and integrators for\nSolana AMM and CLMM pool data, farm rewards, token / mint metadata, prices,\nchain time, and swap quote/transaction helpers. Endpoint paths are taken\nfrom the open-source raydium-sdk-V2 url table; HTTP methods are GET except\nwhere the path implies a transactional helper.\n\n\nContact Support:\n Name: Raydium",
+      "type": "text/plain"
+    }
+  }
+}

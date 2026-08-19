@@ -1,0 +1,146 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Raydium REST API v3 Farms Pools API",
+    "version": "3.0.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Pools",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List pools with filter / sort / pagination",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-v3.raydium.io/pools/info/list-v2",
+            "params": [
+              {
+                "name": "poolType",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "poolSortField",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sortType",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List pools with filter / sort / pagination"
+        },
+        {
+          "info": {
+            "name": "Look up pools by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-v3.raydium.io/pools/info/ids",
+            "params": [
+              {
+                "name": "ids",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Look up pools by ID"
+        },
+        {
+          "info": {
+            "name": "Look up pools by LP mint",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-v3.raydium.io/pools/info/lps",
+            "params": [
+              {
+                "name": "lps",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Look up pools by LP mint"
+        },
+        {
+          "info": {
+            "name": "Get on-chain keys for pools by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-v3.raydium.io/pools/key/ids",
+            "params": [
+              {
+                "name": "ids",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get on-chain keys for pools by ID"
+        },
+        {
+          "info": {
+            "name": "Get CLMM liquidity-by-tick line",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-v3.raydium.io/pools/line/liquidity",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get CLMM liquidity-by-tick line"
+        },
+        {
+          "info": {
+            "name": "Get CLMM position line for a pool",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-v3.raydium.io/pools/line/position",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get CLMM position line for a pool"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

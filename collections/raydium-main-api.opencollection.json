@@ -1,0 +1,139 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Raydium REST API v3 Farms Main API",
+    "version": "3.0.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Main",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get latest / least supported API versions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-v3.raydium.io/main/version"
+          },
+          "docs": "Get latest / least supported API versions"
+        },
+        {
+          "info": {
+            "name": "Get protocol-level info (24h volume, TVL)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-v3.raydium.io/main/info"
+          },
+          "docs": "Get protocol-level info (24h volume, TVL)"
+        },
+        {
+          "info": {
+            "name": "Get current Solana chain time used by Raydium",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-v3.raydium.io/main/chain-time"
+          },
+          "docs": "Get current Solana chain time used by Raydium"
+        },
+        {
+          "info": {
+            "name": "List Solana RPC endpoints used by the UI",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-v3.raydium.io/main/rpcs"
+          },
+          "docs": "List Solana RPC endpoints used by the UI"
+        },
+        {
+          "info": {
+            "name": "List Raydium stake pools",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-v3.raydium.io/main/stake-pools"
+          },
+          "docs": "List Raydium stake pools"
+        },
+        {
+          "info": {
+            "name": "Get CLMM configuration",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-v3.raydium.io/main/clmm-config"
+          },
+          "docs": "Get CLMM configuration"
+        },
+        {
+          "info": {
+            "name": "Get CPMM configuration",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-v3.raydium.io/main/cpmm-config"
+          },
+          "docs": "Get CPMM configuration"
+        },
+        {
+          "info": {
+            "name": "Get current auto priority fee suggestion",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-v3.raydium.io/main/auto-fee"
+          },
+          "docs": "Get current auto priority fee suggestion"
+        },
+        {
+          "info": {
+            "name": "Get aggregated farm info",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-v3.raydium.io/main/farm/info"
+          },
+          "docs": "Get aggregated farm info"
+        },
+        {
+          "info": {
+            "name": "Get farm APR / TVL series",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-v3.raydium.io/main/farm-apr-tv"
+          },
+          "docs": "Get farm APR / TVL series"
+        },
+        {
+          "info": {
+            "name": "Service availability check",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-v3.raydium.io/v3/main/AvailabilityCheckAPI"
+          },
+          "docs": "Service availability check"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

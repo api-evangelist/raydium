@@ -1,0 +1,278 @@
+{
+  "item": [
+    {
+      "id": "54bf6626-aeb8-45e5-84d1-d77bf9f3f792",
+      "name": "Farms",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "1f4fd2c0-8cbc-452a-ba47-3bc9941cf63f",
+          "name": "Look up farms by ID",
+          "request": {
+            "name": "Look up farms by ID",
+            "description": {},
+            "url": {
+              "path": [
+                "farms",
+                "info",
+                "ids"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "ids",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ab923a3d-af3e-47a1-8b36-77fb52819d5b",
+              "name": "Farm info.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "farms",
+                    "info",
+                    "ids"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "ids",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"success\": false,\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6ba92f92-a7f7-4935-8491-95efa1957343",
+          "name": "Get farms by LP mint",
+          "request": {
+            "name": "Get farms by LP mint",
+            "description": {},
+            "url": {
+              "path": [
+                "farms",
+                "info",
+                "lp"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "lp",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c91ce0ca-5b35-4b16-9ddc-6ad957021261",
+              "name": "Farm info.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "farms",
+                    "info",
+                    "lp"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "lp",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"success\": false,\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "426a4c8a-4e9a-4f99-bc6c-f8fb040aa075",
+          "name": "Get on-chain keys for farms by ID",
+          "request": {
+            "name": "Get on-chain keys for farms by ID",
+            "description": {},
+            "url": {
+              "path": [
+                "farms",
+                "key",
+                "ids"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "ids",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e115f6a0-2a78-4028-851a-31c61ebd1cfc",
+              "name": "Farm keys.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "farms",
+                    "key",
+                    "ids"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "ids",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"success\": false,\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api-v3.raydium.io",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "48ee4c8a-30e0-4982-ab0c-2b3e8ccb1b57",
+    "name": "Raydium REST API v3 Farms API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Public, unauthenticated REST API used by the Raydium UI and integrators for\nSolana AMM and CLMM pool data, farm rewards, token / mint metadata, prices,\nchain time, and swap quote/transaction helpers. Endpoint paths are taken\nfrom the open-source raydium-sdk-V2 url table; HTTP methods are GET except\nwhere the path implies a transactional helper.\n\n\nContact Support:\n Name: Raydium",
+      "type": "text/plain"
+    }
+  }
+}

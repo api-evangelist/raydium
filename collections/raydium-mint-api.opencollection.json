@@ -1,0 +1,67 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Raydium REST API v3 Farms Mint API",
+    "version": "3.0.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Mint",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get token / mint list",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-v3.raydium.io/mint/list"
+          },
+          "docs": "Get token / mint list"
+        },
+        {
+          "info": {
+            "name": "Look up mints by IDs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-v3.raydium.io/mint/ids",
+            "params": [
+              {
+                "name": "mints",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated list of token mint addresses."
+              }
+            ]
+          },
+          "docs": "Look up mints by IDs"
+        },
+        {
+          "info": {
+            "name": "Get spot prices for mints",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-v3.raydium.io/mint/price",
+            "params": [
+              {
+                "name": "mints",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated mint addresses."
+              }
+            ]
+          },
+          "docs": "Get spot prices for mints"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

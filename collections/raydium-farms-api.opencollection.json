@@ -1,0 +1,72 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Raydium REST API v3 Farms API",
+    "version": "3.0.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Farms",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Look up farms by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-v3.raydium.io/farms/info/ids",
+            "params": [
+              {
+                "name": "ids",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Look up farms by ID"
+        },
+        {
+          "info": {
+            "name": "Get farms by LP mint",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-v3.raydium.io/farms/info/lp",
+            "params": [
+              {
+                "name": "lp",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get farms by LP mint"
+        },
+        {
+          "info": {
+            "name": "Get on-chain keys for farms by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-v3.raydium.io/farms/key/ids",
+            "params": [
+              {
+                "name": "ids",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get on-chain keys for farms by ID"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

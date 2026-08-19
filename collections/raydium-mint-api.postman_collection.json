@@ -1,0 +1,263 @@
+{
+  "item": [
+    {
+      "id": "0c287f4b-bc05-4547-b87c-b06e4c7ea51e",
+      "name": "Mint",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "abeb704a-4bdb-4267-8d29-457a2fb31ed0",
+          "name": "Get token / mint list",
+          "request": {
+            "name": "Get token / mint list",
+            "description": {},
+            "url": {
+              "path": [
+                "mint",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "29127f6a-07a8-4b08-8cb3-229278ea021d",
+              "name": "Token list.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "mint",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"success\": true,\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1faddf15-1f49-4010-8947-0868a769b865",
+          "name": "Look up mints by IDs",
+          "request": {
+            "name": "Look up mints by IDs",
+            "description": {},
+            "url": {
+              "path": [
+                "mint",
+                "ids"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "mints",
+                  "value": "<string>",
+                  "description": "Comma-separated list of token mint addresses."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "815cbc12-74ee-4cb9-a826-4dca435a3b7b",
+              "name": "Mint metadata.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "mint",
+                    "ids"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "mints",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"success\": true,\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4710322e-6c2e-492f-8206-d606abf0afa1",
+          "name": "Get spot prices for mints",
+          "request": {
+            "name": "Get spot prices for mints",
+            "description": {},
+            "url": {
+              "path": [
+                "mint",
+                "price"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "mints",
+                  "value": "<string>",
+                  "description": "Comma-separated mint addresses."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c1ec5138-557f-4c4f-943b-bd91443daf6e",
+              "name": "Price map.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "mint",
+                    "price"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "mints",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"success\": true,\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api-v3.raydium.io",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "8efbf8c2-b7bc-4808-8f8c-47ad84d06a79",
+    "name": "Raydium REST API v3 Farms Mint API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Public, unauthenticated REST API used by the Raydium UI and integrators for\nSolana AMM and CLMM pool data, farm rewards, token / mint metadata, prices,\nchain time, and swap quote/transaction helpers. Endpoint paths are taken\nfrom the open-source raydium-sdk-V2 url table; HTTP methods are GET except\nwhere the path implies a transactional helper.\n\n\nContact Support:\n Name: Raydium",
+      "type": "text/plain"
+    }
+  }
+}
