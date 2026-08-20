@@ -23,6 +23,15 @@ tags:
 - Liquidity
 - CLMM
 - Launchpad
+- Open-Source
+tags_raw:
+- Web3
+- Solana
+- DEX
+- AMM
+- Liquidity
+- CLMM
+- Launchpad
 - Open Source
 created: '2026-05-08'
 modified: '2026-05-08'
@@ -65,6 +74,12 @@ apis:
 - aid: raydium:smart-contracts
   name: Raydium Solana Programs
   tags:
+  - Smart Contracts
+  - Solana
+  - Onchain
+  - CLMM
+  - AMM
+  tags_raw:
   - Smart Contracts
   - Solana
   - On-chain
