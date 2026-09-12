@@ -154,6 +154,8 @@ apis:
   - type: OpenAPI
     url: openapi/raydium-pools-api-openapi.yml
 common:
+- type: Website
+  url: https://www.raydium.io/
 - type: AgenticAccess
   url: agentic-access/raydium-agentic-access.yml
 - type: DomainSecurity
