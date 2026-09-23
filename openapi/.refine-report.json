@@ -1,10 +1,7 @@
 {
   "provider": "raydium",
   "sources": [
-    "raydium-farms-api-openapi.yml",
-    "raydium-main-api-openapi.yml",
-    "raydium-mint-api-openapi.yml",
-    "raydium-pools-api-openapi.yml"
+    "_original/raydium-openapi.yml"
   ],
   "outputs": [
     "raydium-farms-api-openapi.yml",
@@ -15,6 +12,42 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "raydium-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "raydium-openapi.yml: tagged paths GET /main/version -> Main",
+    "raydium-openapi.yml: tagged paths GET /main/info -> Main",
+    "raydium-openapi.yml: tagged paths GET /main/chain-time -> Main",
+    "raydium-openapi.yml: tagged paths GET /main/rpcs -> Main",
+    "raydium-openapi.yml: tagged paths GET /main/stake-pools -> Main",
+    "raydium-openapi.yml: tagged paths GET /main/clmm-config -> Main",
+    "raydium-openapi.yml: tagged paths GET /main/cpmm-config -> Main",
+    "raydium-openapi.yml: tagged paths GET /main/auto-fee -> Main",
+    "raydium-openapi.yml: tagged paths GET /mint/list -> Mint",
+    "raydium-openapi.yml: tagged paths GET /mint/ids -> Mint",
+    "raydium-openapi.yml: tagged paths GET /mint/price -> Mint",
+    "raydium-openapi.yml: tagged paths GET /pools/info/list-v2 -> Pools",
+    "raydium-openapi.yml: tagged paths GET /pools/info/ids -> Pools",
+    "raydium-openapi.yml: tagged paths GET /pools/info/lps -> Pools",
+    "raydium-openapi.yml: tagged paths GET /pools/key/ids -> Pools",
+    "raydium-openapi.yml: tagged paths GET /pools/line/liquidity -> Pools",
+    "raydium-openapi.yml: tagged paths GET /pools/line/position -> Pools",
+    "raydium-openapi.yml: tagged paths GET /farms/info/ids -> Farms",
+    "raydium-openapi.yml: tagged paths GET /farms/info/lp -> Farms",
+    "raydium-openapi.yml: tagged paths GET /farms/key/ids -> Farms",
+    "raydium-openapi.yml: tagged paths GET /main/farm/info -> Main",
+    "raydium-openapi.yml: tagged paths GET /main/farm-apr-tv -> Main",
+    "raydium-openapi.yml: tagged paths GET /v3/main/AvailabilityCheckAPI -> Main",
+    "raydium-openapi.yml: declared missing tag: Farms",
+    "raydium-openapi.yml: declared missing tag: Main",
+    "raydium-openapi.yml: declared missing tag: Mint",
+    "raydium-openapi.yml: declared missing tag: Pools",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "raydium-farms-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "raydium-main-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "raydium-mint-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "raydium-pools-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
