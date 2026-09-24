@@ -35,7 +35,7 @@ tags:
 - Liquidity
 - CLMM
 - Launchpad
-- Open-Source
+- Open Source
 tags_raw:
 - Web3
 - Solana
@@ -45,6 +45,7 @@ tags_raw:
 - CLMM
 - Launchpad
 - Open Source
+- Open-Source
 created: '2026-05-08'
 modified: '2026-05-08'
 specificationVersion: '0.23'
@@ -72,8 +73,6 @@ apis:
     url: https://api-v3.raydium.io/docs/
   - type: GitHub
     url: https://github.com/raydium-io
-  - url: graphql/raydium-graphql.md
-    type: GraphQL
   x-features:
   - AMM and CLMM pool data
   - Farm reward data
