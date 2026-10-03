@@ -165,18 +165,6 @@ paths:
       - Main
 components:
   schemas:
-    InfoResponse:
-      allOf:
-      - $ref: '#/components/schemas/Envelope'
-      - type: object
-        properties:
-          data:
-            type: object
-            properties:
-              volume24:
-                type: number
-              tvl:
-                type: number
     VersionResponse:
       allOf:
       - $ref: '#/components/schemas/Envelope'
@@ -199,3 +187,15 @@ components:
           type: boolean
         data:
           description: Response payload (shape varies per endpoint).
+    InfoResponse:
+      allOf:
+      - $ref: '#/components/schemas/Envelope'
+      - type: object
+        properties:
+          data:
+            type: object
+            properties:
+              volume24:
+                type: number
+              tvl:
+                type: number
