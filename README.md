@@ -1,4 +1,4 @@
-# Raydium (raydium)
+# Raydium
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,82 +66,135 @@
 
 Raydium is a leading Solana AMM and liquidity provider supporting standard AMM, concentrated liquidity (CLMM), and a launchpad. The Raydium API at api-v3.raydium.io exposes pool, farm, token, swap quote, and price endpoints used by the Raydium UI and integrators. Smart-contract entry points are the primary write path.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/raydium/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/raydium/refs/heads/main/apis.yml)
+**Areas:** Web3 · Solana · Decentralized Exchange · AMM · Liquidity · CLMM · Launchpad · Open Source
 
-## Tags
+## Raydium on APIs.io
 
-- Web3
-- Solana
-- DEX
-- AMM
-- Liquidity
-- CLMM
-- Launchpad
-- Open Source
+Everything profiled for Raydium is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/raydium/](https://apis.io/providers/raydium/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (6)
 
-- **Created:** 2026-05-08
-- **Modified:** 2026-05-08
+- [Raydium REST API v3](https://apis.io/apis/raydium/rest-api/) — REST API for Raydium pool list, CLMM pools, farm rewards, token metadata, swap quote, and price endpoints. Used by raydium.io UI and third-party…
+- [Raydium Solana Programs](https://apis.io/apis/raydium/smart-contracts/) — Raydium's swap, AMM, CLMM, farm, and launchpad programs deployed on Solana.
+- [Raydium Farms API](https://apis.io/apis/raydium/raydium-farms-api/) — The Farms API from Raydium — 3 operation(s) for farms.
+- [Raydium Main API](https://apis.io/apis/raydium/raydium-main-api/) — The Main API from Raydium — 11 operation(s) for main.
+- [Raydium Mint API](https://apis.io/apis/raydium/raydium-mint-api/) — The Mint API from Raydium — 3 operation(s) for mint.
+- [Raydium Pools API](https://apis.io/apis/raydium/raydium-pools-api/) — The Pools API from Raydium — 6 operation(s) for pools.
 
-## APIs
+### Published properties
 
-### Raydium REST API v3
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-REST API for Raydium pool list, CLMM pools, farm rewards, token metadata, swap quote, and price endpoints. Used by raydium.io UI and third-party integrators. JSON output. Free, unauthenticated, fair-use.
+#### GraphQL (1)
 
-- **Human URL:** [https://api-v3.raydium.io/docs/](https://api-v3.raydium.io/docs/)
-- **Base URL:** `https://api-v3.raydium.io`
+GraphQL schemas.
 
-#### Tags
+- [Moved to /providers/raydium/](https://apis.io/graphqls/raydium/raydium-graphql/)
 
-- Pools
-- Farms
-- Tokens
-- Swap Quote
-- Solana
+#### MCP servers (1)
 
-#### Properties
+Model Context Protocol servers that expose the API to agents.
 
-- [Documentation](https://api-v3.raydium.io/docs/)
-- [Git Hub](https://github.com/raydium-io)
-- [Postman Collection](collections/raydium.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/raydium.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [raydium](https://apis.io/servers/raydium/raydium/)
 
-### Raydium Solana Programs
+#### Agentic access (1)
 
-Raydium's swap, AMM, CLMM, farm, and launchpad programs deployed on Solana.
+Which operations an agent can call, which act, and which need a human in the loop.
 
-- **Human URL:** [https://docs.raydium.io/](https://docs.raydium.io/)
-- **Base URL:** `https://solscan.io/account/raydium`
+- [Raydium Agentic Access](https://apis.io/agentic-access/raydium/raydium-agentic-access/)
 
-#### Tags
+#### Collections (5)
 
-- Smart Contracts
-- Solana
-- On-chain
-- CLMM
-- AMM
+Postman and Open Collection request collections.
 
-#### Properties
+- [Raydium REST API v3](https://apis.io/collections/raydium/open-raydium/)
+- [Raydium REST API v3 Farms API](https://apis.io/collections/raydium/open-raydium-farms-api/)
+- [Raydium REST API v3 Farms Main API](https://apis.io/collections/raydium/open-raydium-main-api/)
+- [Raydium REST API v3 Farms Mint API](https://apis.io/collections/raydium/open-raydium-mint-api/)
+- [Raydium REST API v3 Farms Pools API](https://apis.io/collections/raydium/open-raydium-pools-api/)
 
+#### Security (1)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Raydium Domain Security](https://apis.io/security/raydium/raydium-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Raydium Plans Pricing](https://apis.io/plans/raydium/raydium-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Raydium Rate Limits](https://apis.io/rate-limits/raydium/raydium-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Raydium Finops](https://apis.io/finops/raydium/raydium-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.raydium.io/)
 - [Documentation](https://docs.raydium.io/)
-- [Git Hub](https://github.com/raydium-io/raydium-amm)
-- [Postman Collection](collections/raydium.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/raydium.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
 
-## Common Properties
+## API Evangelist rating
 
-- [LinkedIn](https://www.linkedin.com/company/raydium)
-- [Portal](https://raydium.io/)
-- [Documentation](https://docs.raydium.io/)
-- [Git Hub](https://github.com/raydium-io)
-- [Plans](plans/raydium-plans-pricing.yml)
-- [Rate Limits](rate-limits/raydium-rate-limits.yml)
-- [Fin Ops](finops/raydium-finops.yml)
-- [L L Ms Txt](https://docs.raydium.io/llms.txt)
+**Kin Score 22.5** — emerging · rubric 0.25.0 · scored 2026-10-23
 
-## Maintainers
+| Facet | Score |
+|---|---|
+| Discoverability | 75.0 |
+| Contract quality | 41.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 19.0 |
+| Access clarity | 5.3 |
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Agent readiness 29.6** — agent-ready
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | na |
+| MCP Server | verified |
+| Auth Clarity | — |
+| Idempotency | na |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | na |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 11.1** — Securities & Market Data
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/raydium/](https://apis.io/providers/raydium/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Raydium: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/raydium/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
